@@ -1,0 +1,34 @@
+version: '3'
+
+vars:
+  SCRAPEDIN_DB_DSN: '{{.SCRAPEDIN_DB_DSN | default ""}}'
+
+tasks:
+  help:
+    desc: print this help message
+    cmds:
+    - task --list-all
+    silent: true
+
+  confirm:
+    desc: confirmation prompt
+    cmds:
+    - |
+      echo -n 'Are you sure? [y/N] ' && read ans && [ ${ans:-N} = y ]
+    silent: true
+    internal: true
+
+  run:
+    desc: run the automation tool
+    cmds:
+    - go run ./cmd/scraped-in
+
+  tidy:
+    desc: format all .go files, and tidy module dependencies
+    cmds:
+    - echo 'Formatting .go files...'
+    - go fmt ./...
+    - echo 'Tidying module dependencies...'
+    - go mod tidy
+    - echo 'Verifying dependencies...'
+    - go mod verify

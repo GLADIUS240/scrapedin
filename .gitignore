@@ -1,0 +1,46 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go test binaries
+*.test
+
+# Coverage output
+*.out
+
+# Go workspace
+go.work
+
+# Build output
+/bin/
+ /dist/
+
+# IDE files
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# SQLite runtime DB
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# Temporary migration files only
+migrations/*.sql.tmp
+
+scrapedin
