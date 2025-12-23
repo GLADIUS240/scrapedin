@@ -21,18 +21,31 @@ ScrapedIn is a Go-based automation tool for scraping LinkedIn profiles. It autom
 ## Project Structure
 
 scrapedin/
+
 ├── cmd/
+
 │ └── scrapedin/ # Entry point of the application
+
 ├── internal/
+
 │ ├── app/ # Main application logic
+
 │ ├── browser/ # Browser automation setup (Rod)
+
 │ ├── config/ # Configuration loader
+
 │ ├── database/ # SQLite database functions
+
 │ ├── linkedin/ # LinkedIn login and search functions
+
 │ └── logger/ # Zap logger setup
+
 ├── data/ # Stores SQLite DB and browser session
+
 ├── go.mod
+
 ├── go.sum
+
 └── README.md
 
 ---
@@ -49,8 +62,9 @@ Install dependencies:
 ```bash
 go get ./...
 go get github.com/mattn/go-sqlite3
+```
 
-env.sample
+## .env.sample
 
 SCRAPEDIN_LINKEDIN_EMAIL=emailxyz@gmail.com
 SCRAPEDIN_LINKEDIN_PASSWORD=password
@@ -80,18 +94,19 @@ SCRAPEDIN_SEARCH_COMPANIES=Infosys
 SCRAPEDIN_SEARCH_MAX_PAGES=1
 SCRAPEDIN_SEARCH_PAGE_DELAY_SECONDS=4
 
-Database Schema
+## Database Schema
 
 The SQLite database stores scraped profiles in a single table:
 
+```bash
 CREATE TABLE IF NOT EXISTS profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     url TEXT UNIQUE
 );
+```
 
 
-
-Running the Application 
+## Running the Application 
 
 task run
 # or
@@ -112,7 +127,3 @@ This version includes:
 - Professional formatting for submission  
 
 ---
-
-If you want, I can also **add a diagram showing the flow of the app** (Login → Search → Save → Close) for even better documentation. This usually makes the README stand out in submissions.  
-
-Do you want me to add that diagram?
