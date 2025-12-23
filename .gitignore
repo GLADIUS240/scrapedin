@@ -31,6 +31,9 @@ go.work
 # Logs
 *.log
 
+# Browser data and cache
+data/browser/
+
 # OS files
 .DS_Store
 Thumbs.db

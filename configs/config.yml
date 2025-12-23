@@ -1,0 +1,15 @@
+app:
+  env: dev
+
+logger:
+  level: debug
+  encoding: console
+
+database:
+  driver: sqlite
+  dsn: data/scrapedin.db
+
+browser:
+  headless: true
+  slow_motion_ms: 200
+  user_agent: "Mozilla/5.0"

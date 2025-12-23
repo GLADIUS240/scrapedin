@@ -21,7 +21,7 @@ tasks:
   run:
     desc: run the automation tool
     cmds:
-    - go run ./cmd/scraped-in
+    - go run ./cmd/scrapedin
 
   tidy:
     desc: format all .go files, and tidy module dependencies
